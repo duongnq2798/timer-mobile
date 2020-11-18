@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, TextInput} from 'react-native';
+import { StyleSheet, View, Text, TextInput } from 'react-native';
 
 import TimerButton from './TimerButton';
 
@@ -7,7 +7,7 @@ export default class TimerForm extends React.Component {
   constructor(props) {
     super(props);
 
-    const {id, title, project} = props;
+    const { id, title, project } = props;
 
     this.state = {
       title: id ? title : '',
@@ -15,16 +15,17 @@ export default class TimerForm extends React.Component {
     };
   }
 
-  handleTitleChange = (title) => {
-    this.setState({title});
+  handleTitleChange = title => {
+    this.setState({ title });
   };
 
-  handleProjectChange = (project) => {
-    this.setState({project});
+  handleProjectChange = project => {
+    this.setState({ project });
   };
+
   handleSubmit = () => {
-    const {onFormSubmit, id} = this.props;
-    const {title, project} = this.state;
+    const { onFormSubmit, id } = this.props;
+    const { title, project } = this.state;
 
     onFormSubmit({
       id,
@@ -34,8 +35,8 @@ export default class TimerForm extends React.Component {
   };
 
   render() {
-    const {id, onFormClose} = this.props;
-    const {title, project} = this.state;
+    const { id, onFormClose } = this.props;
+    const { title, project } = this.state;
 
     const submitText = id ? 'Update' : 'Create';
 
